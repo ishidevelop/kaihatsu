@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>シフト確認ページ</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 祝日判定ライブラリを読み込み -->
+    <script src="https://cdn.jsdelivr.net/npm/japanese-holidays@1.0.10/lib/japanese-holidays.min.js"></script>
+</head>
+<body>
+    <!-- 共通のナビゲーションメニュー -->
+    <nav class="nav-container">
+        <a href="submit.html" class="nav-button">シフト提出</a>
+        <a href="view.html" class="nav-button">シフト確認</a>
+        <a href="list.html" class="nav-button">【店長用】編集</a>
+    </nav>
+    <hr>
+
+    <!-- JavaScriptがこの中にタイトルと表を生成します -->
+    <div id="shift-display-area"></div>
+
+    <!-- このページ専用のJavaScriptファイルを読み込み -->
+    <!-- ファイルがjsフォルダの中にある場合: "js/view.js" -->
+    <!-- HTMLと同じ階層にある場合: "view.js" -->
+    <script src="view.js"></script>
+</body>
+</html>

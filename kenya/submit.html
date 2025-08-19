@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>シフト提出</title>
+    <link rel="stylesheet" href="style.css">
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
+</head>
+<body>
+    <nav>
+        <a href="submit.html">シフトを提出する</a> |
+        <a href="view.html">シフトを確認する</a> |
+        <a href="list.html">【店長用】シフト編集</a>
+    </nav>
+
+    <hr>
+
+    <h1>シフト希望 提出</h1>
+
+    <div id="step1-name-selection">
+        <h2>1. 名前を選択してください</h2>
+        <div class="form-group">
+            <label for="user-name">名前:</label>
+            <select id="user-name" required>
+                <option value="">選択してください</option>
+                <option value="田中">田中</option>
+                <option value="鈴木">鈴木</option>
+                <option value="佐藤">佐藤</option>
+            </select>
+        </div>
+        <button type="button" id="next-step-btn">次へ（カレンダー表示）</button>
+    </div>
+
+    <div id="step2-calendar-view" style="display: none;">
+        <h2>2. <span id="display-name"></span>さんの希望日をクリック</h2>
+        <h2 id="period-title"></h2> 
+        <div id='calendar'></div>
+        <br>
+        <button id="submit-all-btn">全ての希望シフトを提出する</button>
+    </div>
+
+    <div id="time-modal" class="modal">
+        <div class="modal-content">
+            <h3 id="modal-date"></h3>
+            <div class="form-group">
+                <label for="modal-start-time">開始時間:</label>
+                <select id="modal-start-time"></select>
+            </div>
+            <!-- <div class="form-group">
+                <label for="modal-end-time">終了時間:</label>
+                <select id="modal-end-time"></select>
+            </div> -->
+            <button id="save-shift-btn">OK</button>
+            <button type="button" id="cancel-btn">キャンセル</button>
+        </div>
+    </div>
+    
+    <script src="submit.js"></script>
+</body>
+</html>

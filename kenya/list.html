@@ -1,0 +1,98 @@
+<!-- <!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>シフト一覧</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>シフト希望 一覧画面</h1>
+    <table id="shift-table">
+        <thead>
+            <tr>
+                <th>日付</th>
+                <th>名前</th>
+                <th>時間</th>
+            </tr>
+        </thead>
+        <tbody id="shift-list-body">
+            </tbody>
+    </table>
+    <script src="list.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>シフト編集・従業員管理</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/japanese-holidays@1.0.10/lib/japanese-holidays.min.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="submit.html">シフトを提出する</a> |
+        <a href="view.html">シフトを確認する</a> |
+        <a href="list.html">【店長用】シフト編集</a>
+    </nav>
+
+    <hr>
+
+    
+    <h1>【店長用】管理ページ</h1>
+
+    <section class="admin-section">
+        <h2>従業員管理</h2>
+        
+        <form id="employee-form">
+            <input type="text" id="employee-name" placeholder="名前" required>
+            <select id="employee-role" required>
+                <option value="ホール">ホール</option>
+                <option value="キッチン">キッチン</option>
+            </select>
+            <button type="submit">従業員を登録</button>
+        </form>
+
+        <table id="employee-table">
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>役割</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody id="employee-list-body">
+                </tbody>
+        </table>
+    </section>
+    <hr>
+
+    <section class="admin-section">
+        <h2>提出された希望シフト（閲覧用）</h2>
+        <div id="submitted-shift-grid-container">
+            <!-- ここに閲覧用の表がJSで生成されます -->
+        </div>
+    </section>
+    <hr>
+    <!-- <h2>シフト編集 (2025年 7月)</h2>
+    <div id="shift-grid-container"></div>
+    <button id="save-final-version-btn">この内容でシフトを確定する</button>
+    
+    <script src="list.js"></script> -->
+
+    <section class="admin-section">
+        <h2>確定版シフト（編集用）</h2>
+        <div id="final-shift-grid-container">
+            <!-- ここに編集用の表がJSで生成されます -->
+        </div>
+                <div class="button-area">
+            <button id="save-draft-btn">下書き保存</button>
+            <button id="save-final-version-btn">この内容でシフトを確定する</button>
+        </div>
+        <!-- <button id="save-final-version-btn">この内容でシフトを確定する</button> -->
+    </section>
+    
+    <script src="list.js"></script>
+</body>
+</html>

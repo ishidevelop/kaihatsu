@@ -1,0 +1,193 @@
+/* 全体の基本設定 */
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+    color: #333;
+}
+
+/* 見出し */
+h1 {
+    text-align: center;
+    color: #0056b3;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 10px;
+}
+
+/* フォームの各項目 */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="date"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* ボタン */
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* テーブル（一覧画面用） */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* 全体の基本設定 */
+body { font-family: sans-serif; max-width: 1400px; margin: 20px auto; padding: 0 20px; }
+h1 { text-align: center; color: #0056b3; }
+.form-group { margin-bottom: 15px; }
+label { display: block; margin-bottom: 5px; font-weight: bold; }
+select, input { width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc; }
+button { width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; font-size: 16px; cursor: pointer; border-radius: 4px; }
+button:hover { background-color: #0056b3; }
+#submit-all-btn { background-color: #28a745; margin-top: 20px; }
+#submit-all-btn:hover { background-color: #218838; }
+
+/* モーダルのスタイル */
+.modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.4); }
+.modal-content { background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 400px; border-radius: 8px; }
+#cancel-btn { background-color: #6c757d; margin-top: 10px; }
+#cancel-btn:hover { background-color: #5a6268; }
+
+/* 表全体 */
+#shift-grid,
+#submitted-grid {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* 列の幅を均等に */
+}
+
+#shift-grid th, 
+#shift-grid td, 
+#submitted-grid th,
+#submitted-grid td{
+    border: 1px solid #ccc;
+    text-align: center;
+    vertical-align: top;
+    height: 50px; /* セルの高さを確保 */
+    padding: 1px 0; /* ← 上下の余白を調整 */
+}
+
+/* #shift-grid th {
+    background-color: #f2f2f2;
+    font-size: 11px;
+} */
+
+/* セルの中の二段組 */
+.shift-cell .time-slot {
+    font-weight: bold;
+    font-size: 13px;
+    height: 25px;
+    line-height: 25px;
+    cursor: pointer; /* クリックできることを示す */
+}
+.shift-cell .time-slot:hover {
+    background-color: #e9f5ff; /* マウスオーバーで色を変える */
+}
+
+.shift-cell .note-slot {
+    font-size: 10px;
+    height: 24px;
+    padding: 2px;
+}
+
+/* 編集中のプルダウンメニュー */
+.shift-cell select {
+    width: 100%;
+    height: 25px;
+    border: none;
+    font-weight: bold;
+}
+
+/* 土曜日 */
+.weekend-saturday {
+    background-color: #e9f5ff; /* 水色 */
+}
+/* 日曜日 */
+.weekend-sunday {
+    background-color: #fff0f0; /* 薄い赤色 */
+}
+/* 祝日 */
+.public-holiday {
+    background-color: #fff0f0; /* 日曜日と同じ色 */
+}
+
+/* 閲覧ページのセルはクリックできない見た目にする */
+.view-only .time-slot,
+.view-only .note-slot {
+    cursor: default; /* カーソルを通常の状態にする */
+}
+
+.view-only .time-slot:hover {
+    background-color: inherit; /* マウスオーバーしても色が変わらないようにする */
+}
+
+
+/* 人数が足りない列の「ヘッダーセルだけ」のスタイル */
+#shift-grid th.understaffed-column {
+    background-color: #ffcccc !important; /* 薄い赤色 */
+    color: #a80000 !important; /* 濃い赤色の文字 */
+}
+
+.admin-section {
+    margin-bottom: 40px;
+}
+
+.button-area {
+    display: flex;
+    gap: 10px; /* ボタンの間のスペース */
+    margin-top: 20px;
+}
+#save-draft-btn {
+    background-color: #6c757d; /* グレー系の色 */
+}
+#save-draft-btn:hover {
+    background-color: #5a6268;
+}
+
+/* 提出対象外の日付のスタイル */
+.fc-day-disabled {
+    background-color: #f5f5f5 !important; /* 背景を薄いグレーに */
+    pointer-events: none; /* クリックできなくする */
+}
+.fc-day-disabled .fc-daygrid-day-number {
+    color: #ccc; /* 日付の数字を薄くする */
+}
