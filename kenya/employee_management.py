@@ -1,4 +1,20 @@
-   name VARCHAR(255) NOT NULL UNIQUE,
+import mysql.connector
+from flask import Blueprint, request, jsonify
+
+employee_management_bp = Blueprint('employee_management', __name__)
+
+# init_db関数は、main.pyからdb_configを引数として受け取る
+def init_db(db_config):
+    conn = None
+    try:
+        conn = mysql.connector.connect(**db_config)
+        cursor = conn.cursor()
+        
+        # MySQLのCREATE TABLE文に修正
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS employees (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                name VARCHAR(255) NOT NULL UNIQUE,
                 role VARCHAR(255)
             )
         ''')
