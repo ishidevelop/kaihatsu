@@ -1,4 +1,16 @@
-CREATE TABLE文に修正
+import mysql.connector
+from flask import Blueprint, request, jsonify
+
+shift_dashboard_bp = Blueprint('shift_dashboard_data', __name__)
+
+# --- データベース初期化関数 (preferred_shiftsテーブルの変更を反映) ---
+def init_db(db_config):
+    conn = None
+    try:
+        conn = mysql.connector.connect(**db_config)
+        cursor = conn.cursor()
+        
+        # MySQLのCREATE TABLE文に修正し、is_freeカラムをUNIQUE制約から削除
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS final_shifts (
                 id INT AUTO_INCREMENT PRIMARY KEY,
